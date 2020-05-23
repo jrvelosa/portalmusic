@@ -1,2 +1,3 @@
 # portalmusic
-proyecto de muestra de Integración Continua
+
+proyecto de muestra de Integración Continua  -- JRVG
