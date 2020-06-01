@@ -33,7 +33,7 @@ getNewReleases(){
 getArtista(termino:string){
 
   const headers = new HttpHeaders({
-          'Authorization':"Bearer BQAtMTtCH2uYwayzIuyW8x5mj5lCfSHsMmO-uR7f5-ot8AE1sOOn_szSpLNYOupMN3zqnV2h87lKLq-G4A4",
+          'Authorization':"Bearer BQBrB_nN9ro7w9xff3YsxB0e5PIDZAGMbnt-tkGto5IhR_w0RROnNWP3hcDdbmkxIKXk5YXXTMpAmODsX8M",
   });
   return this.getQuery(`search?q=${termino}&type=artist&Limit=15`)
   .pipe(map(data => data ['artists'].items));
