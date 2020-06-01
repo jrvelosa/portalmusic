@@ -12,6 +12,9 @@ import { NavbarComponent } from './componentes/share/navbar/navbar.component';
 import { from } from 'rxjs';
 import { ROUTES } from './app.routes';
 
+//Import de seervicio
+//mport { SpotifyService } from './services/spotify.service';
+
 @NgModule({
   declarations: [
     AppComponent,
