@@ -5,9 +5,8 @@ import { Token } from '@angular/compiler/src/ml_parser/lexer';
 
 @Injectable({ providedIn: 'root' })
 export class SpotifyService {
-
   token: any;
-  
+
   constructor(private http: HttpClient) {
     console.log('Spotify service listo');
 
@@ -25,8 +24,6 @@ export class SpotifyService {
 
   getQuery(query: string) {
     const url = `https://api.spotify.com/v1/${query}`;
-
-    console.log("clave query", this.token);
 
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.token}`,
