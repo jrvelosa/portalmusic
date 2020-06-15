@@ -14,10 +14,19 @@ export class HomeComponent {
   error: boolean;
   mensajeError: string;
 
+  token: any;
+
   constructor(private spotify: SpotifyService) {
     this.loading = true;
     this.error = false;
 
+    this.spotify.getToken().subscribe((repuesta: any) => {
+      this.token = repuesta.access_token;
+      this.getNewReleases();
+    });
+  }
+
+  getNewReleases() {
     this.spotify.getNewReleases().subscribe(
       (data: any) => {
         this.nuevasCanciones = data;

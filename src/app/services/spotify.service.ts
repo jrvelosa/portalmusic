@@ -1,20 +1,35 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Token } from '@angular/compiler/src/ml_parser/lexer';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class SpotifyService {
+
+  token: any;
+  
   constructor(private http: HttpClient) {
     console.log('Spotify service listo');
+
+    this.getToken().subscribe((repuesta: any) => {
+      this.token = repuesta.access_token;
+    });
   }
+
+  getToken = () => {
+    return this.http
+      .get(
+        'https://token-portalmusic.herokuapp.com/spotify/d6b55734aa3f4b49af89ae8023b6c69e/4659ca881ead4eed81c45197f071db34'
+      );
+  };
 
   getQuery(query: string) {
     const url = `https://api.spotify.com/v1/${query}`;
 
+    console.log("clave query", this.token);
+
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQDbjt9uvnYV8u4QPSuu1pjTbYCMY5sPdMaXthNakf6UFDwvXdqb1mbhZ04yQf7mngHoCf6TsVgqjxFrJNY',
+      Authorization: `Bearer ${this.token}`,
     });
 
     return this.http.get(url, { headers });
@@ -27,21 +42,19 @@ export class SpotifyService {
   }
 
   getArtistas(termino: string) {
-    const headers = new HttpHeaders({
-      'Authorization':
-        'Bearer BQDs_uwek4oNg8G0kwHr80PEpjwnRW6lYsyI-yVTM9G8T2yFq9Fu6ELqHmyPGIVGm1BUfjQZHzkWSiMHqTE',
-    });
-    return this.getQuery(`search?q=${termino}&type=artist&Limit=15`).pipe(
+    return this.getQuery(`search?q=${termino}&type=artist&limit=15`).pipe(
       map((data) => data['artists'].items)
     );
   }
-  getArtista(id: string) {
-        return this.getQuery(`artists/${id}`);
-        //.pipe( map( data => data['artists'].items));
-      }
-    getTopTracks(id: string) {
-          return this.getQuery(`artists/${id}/top-tracks?country=us`).pipe(
-            map((data) => data["tracks"])
-          );
-}
+
+  getArtista(id: string) {
+    return this.getQuery(`artists/${id}`);
+    //.pipe( map( data => data['artists'].items));
+  }
+
+  getTopTracks(id: string) {
+    return this.getQuery(`artists/${id}/top-tracks?country=us`).pipe(
+      map((data) => data['tracks'])
+    );
+  }
 }
