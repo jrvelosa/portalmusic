@@ -15,8 +15,11 @@ import { ROUTES } from './app.routes';
 
 // Pipes
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+
 import { TarjetasComponent } from './componentes/tarjetas/tarjetas.component';
 import { LoadingComponent } from './componentes/share/loading/loading.component';
+
 
 //Import de seervicio
 //mport { SpotifyService } from './services/spotify.service';
@@ -29,6 +32,7 @@ import { LoadingComponent } from './componentes/share/loading/loading.component'
     ArtistaComponent,
     NavbarComponent,
     NoimagePipe,
+    DomseguroPipe,
     TarjetasComponent,
     LoadingComponent,
   ],
