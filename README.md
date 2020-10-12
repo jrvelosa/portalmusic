@@ -1,7 +1,13 @@
 # PortalMusic
 # jenkins test
 
-##Proyecto de trabajo de FRONT-END PoliTecnico gran colombiano
+#Proyecto de trabajo de FRONT-END PoliTecnico gran colombiano
+
+## Integrantes
+1. Jose Rodrigo Velosa
+2. Jhonatan Arley Acevedo
+3. Jorge Hernan Castro
+4. Yamil Antonio Moreno 
 
 ### esta aplicacion se realizo utilizando la api de Sportfy
 
