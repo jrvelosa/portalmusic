@@ -22,6 +22,31 @@ hr {
     width: 150px;
 }
 
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content {
+    width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-detail {
+    background-color: #E0D2BC;
+    color: black;
+}
+.lazy-gif-card {
+    width: 60px;
+    background-color: #69645B;
+    height: 20px;
+    position: absolute;
+    right: 0px;  
+}
+
 .card-title,
 .card-text {
     color: black;
@@ -69,3 +94,5 @@ hr {
 .fadeIn {
     animation-name: fadeIn;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
