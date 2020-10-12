@@ -34,5 +34,6 @@ cd portalmusic
 
 ## Instale las dependencias
 
-- Comienza por instalar Firebase
-- Instala jenkins https://www.jenkins.io/download/
+- Comienza por instalar: *Firebase
+- Instala jenkins: *https://www.jenkins.io/download/
+- Inatala typescript: *https://www.typescriptlang.org/download
