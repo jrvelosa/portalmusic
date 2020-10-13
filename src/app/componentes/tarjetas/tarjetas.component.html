@@ -1,6 +1,6 @@
 <div class="card-columns  animated fadeIn" >
     
-    <div (mouseover)="changeText=true" (mouseout)="changeText=false" (click)="verArtista( item )" *ngFor="let item of items" class="card puntero">
+    <div (click)="verArtista( item )" *ngFor="let item of items" class="card puntero">
             <img [src]="item.images | noimage" class="card-img-top" alt="..." />           
             <div class="card-body content">
                 <h5 class="card-title truncate ">{{ item.name }}</h5>
