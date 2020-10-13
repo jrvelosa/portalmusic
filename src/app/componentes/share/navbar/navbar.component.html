@@ -1,31 +1,46 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
-    <a class="navbar-brand"  href="#">
-    
-        <img src="assets/img/banner-ico.png"  width="30"  height="30"  alt=""> Portal Music
+    <a class="navbar-brand"  routerLink="home">
+
+        <img src="assets/img/banner-ico.png"  routerLink="home" width="30"  height="30"  alt=""> Portal Music
             </a>
-        
+
             <button class="navbar-toggler"  type="button"  data-toggle="collapse"  data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent"  aria-expanded="false"  aria-label="Toggle navigation">
-            
+
                 <span class="navbar-toggler-icon"></span>
                     </button>
 
-                
+
                     <div class="collapse navbar-collapse"  id="navbarSupportedContent">
-                    
+
                         <ul class="navbar-nav mr-auto">
-                        
+
                             <li class="nav-item active"  routerLinkActive="active">
-                            
+
                                 <a class="nav-link"  routerLink="home">Home</a>
                                     </li>
-                                
+
                                     <li class="nav-item"  routerLinkActive="active">
-                                    
+
                                         <a class="nav-link"  routerLink="search">Search</a>
                                             </li>
 
                                             </ul>
 
+                                            <h6 id="username" class="navbar-text pull-right">
+                                                Usuario : {{ user }}
+
+                                            </h6>
+
+                                            <h6 class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flag-icon flag-icon-co"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right animated fadeIn">
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="flag-icon flag-icon-us"></i>Perfil</a>
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="flag-icon flag-icon-de" (click)="salir()"></i>Salir</a>
+                                                </div>
+                                            </h6>
                                             </div>
+
                                             </nav>

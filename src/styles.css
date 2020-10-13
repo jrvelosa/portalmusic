@@ -69,3 +69,7 @@ hr {
 .fadeIn {
     animation-name: fadeIn;
 }
+
+.username {
+    background-color: brown;
+}

@@ -1,0 +1,62 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<section id="wrapper">
+
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <div class="login-register ">
+        <div class="login-box card animated fadeInLeft ">
+            <div class="card-body">
+                <form (ngSubmit)="login(fm)" #fm="ngForm" class="form-horizontal form-material">
+                    <h3 class=""><strong>Iniciar Sesión</strong></h3>
+                    <br>
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <span *ngIf="fm.submitted && fm.controls['email'].errors" class="text-danger" animated fadeIn>* Correo inválido</span>
+                            <input class="form-control" type="text" name="email" required minlength="6" [(ngModel)]="usuario.email" placeholder="Correo electrónico"> </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <span *ngIf="fm.submitted && fm.controls['password'].errors" class="text-danger" animated fadeIn>* Contraseña inválida</span>
+                            <input class="form-control" type="password" name="password" required minlength="6" [(ngModel)]="usuario.password" placeholder="Contraseña"> </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <div class="checkbox checkbox-info pull-left p-t-0">
+                                <input id="checkbox-signup" type="checkbox" name="recordarme" [(ngModel)]="recordarme" class="filled-in chk-col-light-blue">
+
+                                <label for="checkbox-signup"> _Recordar usuario </label>
+
+                            </div> <a href="reset-password" id="to-recover" class="pull-right"><i class="fa fa-lock m-r-5"></i> Olvide la Contraseña?</a> </div>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <div class="col-xs-12 p-b-20">
+                            <button class="btn btn-block btn-lg btn-info " type="submit">INGRESAR</button>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+                            <div class="social">
+                                <a href="javascript:void(0)" class="btn  btn-facebook" data-toggle="tooltip" title="Login with Facebook"> <i aria-hidden="true" class="fa fa-facebook"></i> </a>
+                                <a href="javascript:void(0)" class="btn btn-googleplus" data-toggle="tooltip" title="Login with Google"> <i aria-hidden="true" class="fa fa-google-plus"></i> </a>
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="form-group m-b-0">
+                        <div class="col-sm-12 text-center">
+                            <label>¿No tienes una cuenta?  </label> <a href="register" class="text-info m-l-5"><b>_Regístrate</b></a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
