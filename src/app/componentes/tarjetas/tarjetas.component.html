@@ -1,11 +1,7 @@
 <div class="card-columns  animated fadeIn" >
     
-    <div (mouseover)="changeText=true" (mouseout)="changeText=false" (click)="verArtista( item )" *ngFor="let item of items" class="card puntero">
-            <img *ngIf="!changeText" [src]="item.images | noimage" class="card-img-top" alt="..." />
-            <div class="card-detail" *ngIf="changeText">
-                {{valores}}
-                <img src="assets/img/staticEqualizer.png" class="lazy-gif-card">
-            </div>
+    <div (click)="verArtista( item )" *ngFor="let item of items" class="card puntero">
+            <img [src]="item.images | noimage" class="card-img-top" alt="..." />           
             <div class="card-body content">
                 <h5 class="card-title truncate ">{{ item.name }}</h5>
                 
@@ -15,7 +11,6 @@
                         {{artista.name}}
                     </span>
                 </p>
-            </div>
-        
+            </div>        
    </div>
 </div>
